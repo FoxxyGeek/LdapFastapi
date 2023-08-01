@@ -14,20 +14,13 @@ from web.dependecies import check_cookie_session
 from web.api import enums
 from config import simple_db
 
-import logging
-
 router = APIRouter(tags=['LDAP'])
-
-logging.config.fileConfig('logging.conf', disable_existing_loggers=False)
-logger = logging.getLogger(__name__)
 
 
 # base operation
 @router.post('/bind')
 async def bind(response: Response, email: str = Form(...), password: str = Form(...)):
     user = simple_db['users'].get(email)
-
-    logger.info('something happend')
 
     if not user:
         raise HTTPException(

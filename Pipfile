@@ -8,6 +8,7 @@ fastapi = "*"
 uvicorn = "*"
 pydantic-settings = "*"
 python-multipart = "*"
+json-logging = "*"
 
 [dev-packages]
 

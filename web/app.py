@@ -1,6 +1,7 @@
 from starlette.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 
+
 from web.api import ldap
 
 # app & routes init
@@ -13,3 +14,4 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
